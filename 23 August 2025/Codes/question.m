@@ -1,0 +1,1 @@
+fprintf("LUD decomposition\nGauss elimination\nGauss Jordan\n");

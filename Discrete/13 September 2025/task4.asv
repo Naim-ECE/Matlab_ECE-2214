@@ -1,0 +1,15 @@
+% p or ~p
+p = [0; 1];
+count = 0;
+fprintf('p    ~p    (p | ~p)\n');
+
+for i = 1:length(p)
+    result = ~p(i) | p(i);
+    if result == 1
+        count = count + 1;
+    end
+    
+    fprintf('%d\t  %d\t    \t%d\n', p(i), ~p(i), result);
+end
+fprintf("\n");
+if count == length()

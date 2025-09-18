@@ -1,5 +1,5 @@
 % Solve a linear system using Gauss-Jacobi and Gauss-Seidel methods
-clc; 
+clc;
 clear;
 
 % Example system Ax = b
