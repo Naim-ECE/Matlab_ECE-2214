@@ -1,0 +1,12 @@
+clc;
+clear;
+disp('Compare Sets using Venn Regions');
+Set1 = [10 20 30 40 50];
+Set2 = [40 50 60 70 80];
+Common = intersect(Set1, Set2);
+Only_Set1 = setdiff(Set1, Set2);
+Only_Set2 = setdiff(Set2, Set1);
+fprintf('Common elements (Set1 n Set2): %s\n', num2str(Common));
+fprintf('Unique to Set1 (Set1 only): %s\n', num2str(Only_Set1));
+fprintf('Unique to Set2 (Set2 only): %s\n', num2str(Only_Set2));
+fprintf('Total unique elements (Set1 U Set2): %s\n', num2str(union(Set1, Set2)));
