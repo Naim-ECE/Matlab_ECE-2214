@@ -1,0 +1,14 @@
+clc;
+clear;
+disp('Distributive Laws Verification (A, B, C)');
+A = [1 2 3 4];
+B = [3 4 5 6];
+C = [5 6 7 8];
+LHS1_d = intersect(A, union(B, C));
+RHS1_d = union(intersect(A, B), intersect(A, C));
+disp('A n (B U C) = (A n B) U (A n C):');
+disp(isequal(LHS1_d, RHS1_d));
+LHS2_d = union(A, intersect(B, C));
+RHS2_d = intersect(union(A, B), union(A, C));
+disp('A U (B n C) = (A U B) n (A U C):');
+disp(isequal(LHS2_d, RHS2_d));

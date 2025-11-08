@@ -1,0 +1,10 @@
+clc;
+clear;
+disp('Finding students who studies none');
+Total = 100;
+M = 45; P = 50; C = 40;
+M_P = 20; M_C = 15; P_C = 10;
+M_P_C = 5;
+Total_One_or_More = M + P + C - (M_P + M_C + P_C) + M_P_C;
+None_Study = Total - Total_One_or_More;
+fprintf('Students studying NONE of the three subjects: %d\n', None_Study);

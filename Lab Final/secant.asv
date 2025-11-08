@@ -1,0 +1,28 @@
+clc;
+clear;
+
+syms x;
+f_sym = x^3 - 2*x -5;
+f = matlabFunction(f_sym);
+
+a = input("Enter the value of a: ");
+b = input("Enter the value of b: ");
+
+fn = secant_m(f, a, b);
+
+function fn = secant_m(f, a, b)
+fprintf("i        a       b       x       f(x)\n");
+    for i = 1 : 100
+        c = f(a);
+        d = f(b);
+
+        x = b - d * ((b - a) / (d - c));
+        if f(x) <= 0.001
+            break;
+        end
+        a = b;
+        b = x;
+        fprintf("%i   \t%.3f   \t.3%f   \t%.3f   ")
+    end
+    fprintf("x = %.3f", x);
+end

@@ -1,0 +1,18 @@
+clc;
+clear;
+disp('De Morgan''s Laws Verification (A, B, C)');
+U = 1:10;
+A = [1 2 3 4];
+B = [3 4 5 6];
+C = [5 6 7 8];
+A_prime = setdiff(U, A);
+B_prime = setdiff(U, B);
+C_prime = setdiff(U, C);
+LHS1 = setdiff(U, union(A, union(B, C)));
+RHS1 = intersect(A_prime, intersect(B_prime, C_prime));
+disp('(A U B U C)'' = A'' n B'' n C'':');
+disp(isequal(LHS1, RHS1));
+LHS2 = setdiff(U, intersect(A, intersect(B, C)));
+RHS2 = union(A_prime, union(B_prime, C_prime));
+disp('(A n B n C)'' = A'' U B'' U C'':');
+disp(isequal(LHS2, RHS2));
